@@ -15,6 +15,7 @@
 		80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6B29729033004B66F6 /* VehicleSearchService.swift */; };
 		80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6D297290CC004B66F6 /* ApiResult.swift */; };
 		80037F762972C76C004B66F6 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F752972C76C004B66F6 /* Binder.swift */; };
+		80037F782972D98E004B66F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F772972D98E004B66F6 /* UIViewController.swift */; };
 		80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B72971CF61009112CB /* SearchScreenViewModel.swift */; };
 		80C168BA2971CF6B009112CB /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B92971CF6B009112CB /* UiState.swift */; };
 		80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BB2971CF76009112CB /* VehicleInfoModel.swift */; };
@@ -77,6 +78,7 @@
 		80037F6B29729033004B66F6 /* VehicleSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchService.swift; sourceTree = "<group>"; };
 		80037F6D297290CC004B66F6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		80037F752972C76C004B66F6 /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
+		80037F772972D98E004B66F6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		80C168B72971CF61009112CB /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		80C168B92971CF6B009112CB /* UiState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
 		80C168BB2971CF76009112CB /* VehicleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				80ED5C862971665A0099AAA9 /* UIView.swift */,
 				80037F5D29726B17004B66F6 /* NSObject.swift */,
 				80037F5F297274CA004B66F6 /* String.swift */,
+				80037F772972D98E004B66F6 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			files = (
 				80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */,
 				80037F60297274CA004B66F6 /* String.swift in Sources */,
+				80037F782972D98E004B66F6 /* UIViewController.swift in Sources */,
 				80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */,
 				80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */,
 				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,

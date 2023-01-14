@@ -399,18 +399,18 @@ class SearchToolScreen: UIViewController {
     
     
     @objc func onSearchBtnClick(){
+        
         let text : String? = searchInputField.text
-        if let query = text{
-            viewModel.queryVehicleInfo(query:query)
+        
+        if text==nil || text!.isEmpty{
+            self.showToast(message: "empty_reg_no_msg".localized())
+            return
         }
+        
+        viewModel.queryVehicleInfo(query:text!)
+         
     }
-    
-    
-    
-    @objc func gotoSearchScreen(){
-        //        let nextScreen = VehicleSearchScreen()
-        //        navigationController?.pushViewController(nextScreen, animated: true)
-    }
+     
     
     @objc func onBackPressed(){
         navigationController?.popViewController(animated: true)

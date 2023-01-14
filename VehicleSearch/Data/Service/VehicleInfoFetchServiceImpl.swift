@@ -16,18 +16,14 @@ class VehicleInfoFetchServiceImpl : VehicleSearchService {
                 return ApiResult.error("Error creating url")
             }
             
-            print(request)
-            
             let (data,response) = try await URLSession.shared.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 return ApiResult.error("Invalid Reg No")
             }
-            
-            print("decoding")
+             
             let decoder = JSONDecoder()
             let decodedData  = try decoder.decode(VehicleInfoModel.self, from: data)
-            print("data decoded")
-            print(decodedData)
+           
             return ApiResult.content(decodedData)
             
         }catch{

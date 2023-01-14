@@ -17,4 +17,7 @@
 "enter_reg" = "Enter reg";
 "go" =  "GO";
 
+//other
+"empty_reg_no_msg"  = "Pleas enter reg no";
+
 
