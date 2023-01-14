@@ -7,15 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */; };
+		80037F5E29726B17004B66F6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5D29726B17004B66F6 /* NSObject.swift */; };
+		80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B72971CF61009112CB /* SearchScreenViewModel.swift */; };
+		80C168BA2971CF6B009112CB /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B92971CF6B009112CB /* UiState.swift */; };
+		80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BB2971CF76009112CB /* VehicleInfoModel.swift */; };
+		80C168BF2971CF91009112CB /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BD2971CF91009112CB /* MockApi.swift */; };
+		80C168C02971CF91009112CB /* VehicleInfoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */; };
 		80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C272971064D0099AAA9 /* AppDelegate.swift */; };
 		80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C292971064D0099AAA9 /* SceneDelegate.swift */; };
-		80ED5C2C2971064D0099AAA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C2B2971064D0099AAA9 /* ViewController.swift */; };
 		80ED5C2F2971064D0099AAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C2D2971064D0099AAA9 /* Main.storyboard */; };
 		80ED5C312971064F0099AAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C302971064F0099AAA9 /* Assets.xcassets */; };
 		80ED5C342971064F0099AAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C322971064F0099AAA9 /* LaunchScreen.storyboard */; };
 		80ED5C3F2971064F0099AAA9 /* VehicleSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C3E2971064F0099AAA9 /* VehicleSearchTests.swift */; };
 		80ED5C492971064F0099AAA9 /* VehicleSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C482971064F0099AAA9 /* VehicleSearchUITests.swift */; };
 		80ED5C4B2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */; };
+		80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */; };
+		80ED5C68297109860099AAA9 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5C297109850099AAA9 /* Roboto-LightItalic.ttf */; };
+		80ED5C69297109860099AAA9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5D297109850099AAA9 /* Roboto-Bold.ttf */; };
+		80ED5C6A297109860099AAA9 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5E297109850099AAA9 /* Roboto-Black.ttf */; };
+		80ED5C6B297109860099AAA9 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5F297109860099AAA9 /* Roboto-BlackItalic.ttf */; };
+		80ED5C6C297109860099AAA9 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C60297109860099AAA9 /* Roboto-Light.ttf */; };
+		80ED5C6D297109860099AAA9 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C61297109860099AAA9 /* Roboto-MediumItalic.ttf */; };
+		80ED5C6E297109860099AAA9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C62297109860099AAA9 /* Roboto-Regular.ttf */; };
+		80ED5C6F297109860099AAA9 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C63297109860099AAA9 /* Roboto-Thin.ttf */; };
+		80ED5C70297109860099AAA9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C64297109860099AAA9 /* Roboto-Medium.ttf */; };
+		80ED5C71297109860099AAA9 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C65297109860099AAA9 /* Roboto-ThinItalic.ttf */; };
+		80ED5C72297109860099AAA9 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C66297109860099AAA9 /* Roboto-Italic.ttf */; };
+		80ED5C73297109860099AAA9 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C67297109860099AAA9 /* Roboto-BoldItalic.ttf */; };
+		80ED5C7A297109960099AAA9 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C74297109960099AAA9 /* Oswald-Regular.ttf */; };
+		80ED5C7B297109960099AAA9 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C75297109960099AAA9 /* Oswald-SemiBold.ttf */; };
+		80ED5C7C297109960099AAA9 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C76297109960099AAA9 /* Oswald-Light.ttf */; };
+		80ED5C7D297109960099AAA9 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C77297109960099AAA9 /* Oswald-Bold.ttf */; };
+		80ED5C7E297109960099AAA9 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C78297109960099AAA9 /* Oswald-ExtraLight.ttf */; };
+		80ED5C7F297109960099AAA9 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C79297109960099AAA9 /* Oswald-Medium.ttf */; };
+		80ED5C8129710FE70099AAA9 /* VehicleSearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */; };
+		80ED5C872971665A0099AAA9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C862971665A0099AAA9 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
+		80037F5D29726B17004B66F6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		80C168B72971CF61009112CB /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
+		80C168B92971CF6B009112CB /* UiState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
+		80C168BB2971CF76009112CB /* VehicleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoModel.swift; sourceTree = "<group>"; };
+		80C168BD2971CF91009112CB /* MockApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
+		80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoFetchService.swift; sourceTree = "<group>"; };
 		80ED5C242971064D0099AAA9 /* VehicleSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED5C272971064D0099AAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ED5C292971064D0099AAA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80ED5C2B2971064D0099AAA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80ED5C2E2971064D0099AAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80ED5C302971064F0099AAA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80ED5C332971064F0099AAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +82,27 @@
 		80ED5C442971064F0099AAA9 /* VehicleSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED5C482971064F0099AAA9 /* VehicleSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchUITests.swift; sourceTree = "<group>"; };
 		80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
+		80ED5C5C297109850099AAA9 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		80ED5C5D297109850099AAA9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		80ED5C5E297109850099AAA9 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		80ED5C5F297109860099AAA9 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		80ED5C60297109860099AAA9 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		80ED5C61297109860099AAA9 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		80ED5C62297109860099AAA9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		80ED5C63297109860099AAA9 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		80ED5C64297109860099AAA9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		80ED5C65297109860099AAA9 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		80ED5C66297109860099AAA9 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		80ED5C67297109860099AAA9 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		80ED5C74297109960099AAA9 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		80ED5C75297109960099AAA9 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		80ED5C76297109960099AAA9 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		80ED5C77297109960099AAA9 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		80ED5C78297109960099AAA9 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		80ED5C79297109960099AAA9 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchScreen.swift; sourceTree = "<group>"; };
+		80ED5C862971665A0099AAA9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +130,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80037F5729726A80004B66F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80C168B72971CF61009112CB /* SearchScreenViewModel.swift */,
+				80C168BB2971CF76009112CB /* VehicleInfoModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80037F5829726A8A004B66F6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				80037F5A29726A98004B66F6 /* Api */,
+				80037F5929726A91004B66F6 /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		80037F5929726A91004B66F6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		80037F5A29726A98004B66F6 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				80C168BD2971CF91009112CB /* MockApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		80037F5C29726AE7004B66F6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C862971665A0099AAA9 /* UIView.swift */,
+				80037F5D29726B17004B66F6 /* NSObject.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		80ED5C1B2971064D0099AAA9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +196,17 @@
 		80ED5C262971064D0099AAA9 /* VehicleSearch */ = {
 			isa = PBXGroup;
 			children = (
+				80037F5829726A8A004B66F6 /* Data */,
+				80037F5729726A80004B66F6 /* ViewModel */,
+				80ED5C592971095C0099AAA9 /* Fonts */,
+				80ED5C82297114200099AAA9 /* View */,
 				80ED5C272971064D0099AAA9 /* AppDelegate.swift */,
 				80ED5C292971064D0099AAA9 /* SceneDelegate.swift */,
-				80ED5C2B2971064D0099AAA9 /* ViewController.swift */,
 				80ED5C2D2971064D0099AAA9 /* Main.storyboard */,
 				80ED5C302971064F0099AAA9 /* Assets.xcassets */,
 				80ED5C322971064F0099AAA9 /* LaunchScreen.storyboard */,
 				80ED5C352971064F0099AAA9 /* Info.plist */,
+				80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */,
 			);
 			path = VehicleSearch;
 			sourceTree = "<group>";
@@ -125,6 +226,66 @@
 				80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */,
 			);
 			path = VehicleSearchUITests;
+			sourceTree = "<group>";
+		};
+		80ED5C592971095C0099AAA9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C5B297109740099AAA9 /* Oswald */,
+				80ED5C5A2971096B0099AAA9 /* Roboto */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		80ED5C5A2971096B0099AAA9 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C5E297109850099AAA9 /* Roboto-Black.ttf */,
+				80ED5C5F297109860099AAA9 /* Roboto-BlackItalic.ttf */,
+				80ED5C5D297109850099AAA9 /* Roboto-Bold.ttf */,
+				80ED5C67297109860099AAA9 /* Roboto-BoldItalic.ttf */,
+				80ED5C66297109860099AAA9 /* Roboto-Italic.ttf */,
+				80ED5C60297109860099AAA9 /* Roboto-Light.ttf */,
+				80ED5C5C297109850099AAA9 /* Roboto-LightItalic.ttf */,
+				80ED5C64297109860099AAA9 /* Roboto-Medium.ttf */,
+				80ED5C61297109860099AAA9 /* Roboto-MediumItalic.ttf */,
+				80ED5C62297109860099AAA9 /* Roboto-Regular.ttf */,
+				80ED5C63297109860099AAA9 /* Roboto-Thin.ttf */,
+				80ED5C65297109860099AAA9 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		80ED5C5B297109740099AAA9 /* Oswald */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C77297109960099AAA9 /* Oswald-Bold.ttf */,
+				80ED5C78297109960099AAA9 /* Oswald-ExtraLight.ttf */,
+				80ED5C76297109960099AAA9 /* Oswald-Light.ttf */,
+				80ED5C79297109960099AAA9 /* Oswald-Medium.ttf */,
+				80ED5C74297109960099AAA9 /* Oswald-Regular.ttf */,
+				80ED5C75297109960099AAA9 /* Oswald-SemiBold.ttf */,
+			);
+			path = Oswald;
+			sourceTree = "<group>";
+		};
+		80ED5C82297114200099AAA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80037F5C29726AE7004B66F6 /* Extension */,
+				80C168B92971CF6B009112CB /* UiState.swift */,
+				80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */,
+				80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */,
+				80ED5C83297114260099AAA9 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80ED5C83297114260099AAA9 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +392,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80ED5C7B297109960099AAA9 /* Oswald-SemiBold.ttf in Resources */,
 				80ED5C342971064F0099AAA9 /* LaunchScreen.storyboard in Resources */,
 				80ED5C312971064F0099AAA9 /* Assets.xcassets in Resources */,
+				80ED5C7F297109960099AAA9 /* Oswald-Medium.ttf in Resources */,
+				80ED5C7C297109960099AAA9 /* Oswald-Light.ttf in Resources */,
+				80ED5C6E297109860099AAA9 /* Roboto-Regular.ttf in Resources */,
+				80ED5C7D297109960099AAA9 /* Oswald-Bold.ttf in Resources */,
+				80ED5C73297109860099AAA9 /* Roboto-BoldItalic.ttf in Resources */,
+				80ED5C69297109860099AAA9 /* Roboto-Bold.ttf in Resources */,
+				80ED5C6F297109860099AAA9 /* Roboto-Thin.ttf in Resources */,
+				80ED5C6B297109860099AAA9 /* Roboto-BlackItalic.ttf in Resources */,
+				80ED5C7A297109960099AAA9 /* Oswald-Regular.ttf in Resources */,
+				80ED5C68297109860099AAA9 /* Roboto-LightItalic.ttf in Resources */,
 				80ED5C2F2971064D0099AAA9 /* Main.storyboard in Resources */,
+				80ED5C70297109860099AAA9 /* Roboto-Medium.ttf in Resources */,
+				80ED5C6C297109860099AAA9 /* Roboto-Light.ttf in Resources */,
+				80ED5C6D297109860099AAA9 /* Roboto-MediumItalic.ttf in Resources */,
+				80ED5C7E297109960099AAA9 /* Oswald-ExtraLight.ttf in Resources */,
+				80ED5C72297109860099AAA9 /* Roboto-Italic.ttf in Resources */,
+				80ED5C6A297109860099AAA9 /* Roboto-Black.ttf in Resources */,
+				80ED5C71297109860099AAA9 /* Roboto-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +437,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80ED5C2C2971064D0099AAA9 /* ViewController.swift in Sources */,
+				80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */,
+				80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */,
+				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,
 				80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */,
 				80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */,
+				80C168BA2971CF6B009112CB /* UiState.swift in Sources */,
+				80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */,
+				80C168C02971CF91009112CB /* VehicleInfoFetchService.swift in Sources */,
+				80ED5C872971665A0099AAA9 /* UIView.swift in Sources */,
+				80037F5E29726B17004B66F6 /* NSObject.swift in Sources */,
+				80ED5C8129710FE70099AAA9 /* VehicleSearchScreen.swift in Sources */,
+				80C168BF2971CF91009112CB /* MockApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -445,6 +633,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +662,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
