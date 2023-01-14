@@ -1,0 +1,20 @@
+/*
+  Localizable.strings
+  VehicleSearch
+
+  Created by Ariful Jannat Arif on 1/14/23.
+  
+*/
+//onboarding screen
+"onboarding_title" = "New Feature";
+"onboarding_header" = "Making cars easy";
+"onboarding_message"  = "We've got a brilliant new vehicle\nsearch feature.. why not give it a try!";
+"try_it_out" = "Try it out";
+
+//search tool screen
+"search_tool" = "Search Tool";
+"search_tool_header" = "What's your\nvehicle reg";
+"enter_reg" = "Enter reg";
+"go" =  "GO";
+
+

@@ -9,16 +9,13 @@ import Combine
 
 import Foundation
 
-struct FeatureInfoModel{
-    let feature : String
-    let status : String
-}
 
 final class SearchScreenViewModel{
     
-    @Published private(set) var state : UiState<[FeatureInfoModel]> = UiState.idle
+    @Published private(set) var state : UiState<[VehicleFeatureInfoModel]> = UiState.idle
     
     //    var state = BehaviorRelay<VehicleInfoModel?>(nil)
+    private let apiService = VehicleInfoFetchServiceImpl()
     
     
     var vehicleRegNo:String = ""{
@@ -39,50 +36,30 @@ final class SearchScreenViewModel{
         state = UiState.loading
         
         print("loading started")
-        
-        do{
-            guard let request = VehicleSearchApi.queryVehicleDetails(regNo: regNo)
-                .request else {
-                notifyError()
-                return
-            }
-            
-            print(request)
-            
-            let (data,response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                notifyError()
-                return
-            }
-            
-            print("decoding")
-            let decoder = JSONDecoder()
-            let decodedData  = try decoder.decode(VehicleInfoModel.self, from: data)
-            print("data decoded")
-            print(decodedData)
-            DispatchQueue.main.async {
-                var info:[FeatureInfoModel] = []
-                info.append(FeatureInfoModel(feature: "Make", status: decodedData.make))
-                info.append(FeatureInfoModel(feature: "Model", status: decodedData.model))
-                info.append(FeatureInfoModel(feature: "Details", status: decodedData.details))
-                info.append(FeatureInfoModel(feature: "Body Type", status: decodedData.bodyType))
-                info.append(FeatureInfoModel(feature: "Engine", status: decodedData.engine))
-                info.append(FeatureInfoModel(feature: "Year", status: decodedData.year))
-                info.append(FeatureInfoModel(feature: "GearBox", status: decodedData.gearbox))
-                info.append(FeatureInfoModel(feature: "MOT", status: decodedData.motExpiry))
-                self.state = UiState.content(info)
-            }
-            
-        }catch{
-            notifyError()
-        }
-    }
-    func notifyError(){
-        print("error fetching")
+        let result = await apiService.queryDetails(regNo: regNo)
+        print("loading finished \(result)")
         DispatchQueue.main.async {
-            self.state = UiState.error("Something went wrong")
-            
+            switch result.self{
+                case .content(let data):
+                    var info:[VehicleFeatureInfoModel] = []
+                    info.append(VehicleFeatureInfoModel(feature: "Make", status: data.make))
+                    info.append(VehicleFeatureInfoModel(feature: "Model", status: data.model))
+                    info.append(VehicleFeatureInfoModel(feature: "Details", status: data.details))
+                    info.append(VehicleFeatureInfoModel(feature: "Body Type", status: data.bodyType))
+                    info.append(VehicleFeatureInfoModel(feature: "Engine", status: data.engine))
+                    info.append(VehicleFeatureInfoModel(feature: "Year", status: data.year))
+                    info.append(VehicleFeatureInfoModel(feature: "GearBox", status: data.gearbox))
+                info.append(VehicleFeatureInfoModel(feature: "MOT", status: data.motExpiry,highlighted : true))
+                    self.state = UiState.content(info)
+                    break
+                case .error(let error):
+                    self.state = UiState.error(error)
+                    break
+            }
         }
+        
+        
     }
+    
     
 }

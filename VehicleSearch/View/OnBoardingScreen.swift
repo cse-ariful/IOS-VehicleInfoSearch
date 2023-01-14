@@ -10,22 +10,24 @@ class OnBoardingScreen: UIViewController {
     
     let toolbarTitle = UILabel().apply{title in
         title.textColor = .white
-        title.text = "New Feature".uppercased()
+        title.text = "onboarding_title".localized().uppercased()
         title.textColor = UIColor(named: "Black") 
         title.font = UIFont(name: "Roboto-Bold", size: 20)
         title.textAlignment = .center
     }
     let titleHeader  =  UILabel().apply{ label in
-        label.text = "Making Cars Easy".uppercased()
-        label.font = UIFont.boldSystemFont(ofSize: 36)
+        let  str = NSMutableAttributedString()
+            .appendWith(color: UIColor(named: "White")!, "onboarding_header".localized().uppercased())
+            .appendWith(color: UIColor(named: "Green")!, weight: .bold, ".")
+        label.attributedText = str
+        label.font = UIFont(name: "Roboto-Medium", size: 34)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor(named: "White")
         
     }
     let titleMessage = UILabel().apply {label in
-        label.text = "We've got a brilliant new vehicle\nsearch feature.. why not give it a try!"
+        label.text = "onboarding_message".localized()
         label.font = UIFont(name: "Roboto", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -35,8 +37,9 @@ class OnBoardingScreen: UIViewController {
         
     }
     let tryBtn = UIButton().apply{btn in
-        btn.setTitle("Try it out".uppercased(), for: .normal)
+        btn.setTitle("try_it_out".localized().uppercased(), for: .normal)
         btn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        btn.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18)
         btn.backgroundColor = UIColor(named: "Green")
         btn.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -57,19 +60,33 @@ class OnBoardingScreen: UIViewController {
     }
     func setupViews(){
         view.addSubview(statusBarBg)
-        statusBarBg.addViewConstarint(start: view.leadingAnchor ,top: view.topAnchor,end:view.trailingAnchor,bottom:  view.safeAreaLayoutGuide.topAnchor)
+        statusBarBg.addViewConstarint(
+            start: view.leadingAnchor ,
+            top: view.topAnchor,
+            end: view.trailingAnchor,
+            bottom: view.safeAreaLayoutGuide.topAnchor
+        )
         view.addSubview(mainView)
-        mainView.addViewConstarint(start: view.leadingAnchor,
-                                   top:  view.safeAreaLayoutGuide.topAnchor,
-                                   end: view.trailingAnchor,
-                                   bottom: view.bottomAnchor)
+        mainView.addViewConstarint(
+            start: view.leadingAnchor,
+            top:  view.safeAreaLayoutGuide.topAnchor,
+            end: view.trailingAnchor,
+            bottom: view.bottomAnchor
+        )
         mainView.addSubview(contentStack)
         setupToolbar()
         setupContents()
         
     }
     func setupContents(){
-        contentStack.addViewConstarint(start: view.leadingAnchor,top: view.readableContentGuide.topAnchor,end: view.trailingAnchor,paddingStart: 20,paddingTop:32,paddingEnd: 20)
+        contentStack.addViewConstarint(
+            start: view.leadingAnchor,
+            top: view.readableContentGuide.topAnchor,
+            end: view.trailingAnchor,
+            paddingStart: 20,
+            paddingTop:32,
+            paddingEnd: 20
+        )
         
         contentStack.addArrangedSubview(titleHeader)
         contentStack.addArrangedSubview(titleMessage)

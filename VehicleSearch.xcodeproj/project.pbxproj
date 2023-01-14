@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */; };
 		80037F5E29726B17004B66F6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5D29726B17004B66F6 /* NSObject.swift */; };
+		80037F60297274CA004B66F6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5F297274CA004B66F6 /* String.swift */; };
+		80037F65297275D5004B66F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80037F67297275D5004B66F6 /* Localizable.strings */; };
+		80037F6A29728FCC004B66F6 /* VehicleFeatureInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */; };
+		80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6B29729033004B66F6 /* VehicleSearchService.swift */; };
+		80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6D297290CC004B66F6 /* ApiResult.swift */; };
 		80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B72971CF61009112CB /* SearchScreenViewModel.swift */; };
 		80C168BA2971CF6B009112CB /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B92971CF6B009112CB /* UiState.swift */; };
 		80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BB2971CF76009112CB /* VehicleInfoModel.swift */; };
-		80C168BF2971CF91009112CB /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BD2971CF91009112CB /* MockApi.swift */; };
-		80C168C02971CF91009112CB /* VehicleInfoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */; };
+		80C168BF2971CF91009112CB /* VehicleSearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BD2971CF91009112CB /* VehicleSearchApi.swift */; };
+		80C168C02971CF91009112CB /* VehicleInfoFetchServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BE2971CF91009112CB /* VehicleInfoFetchServiceImpl.swift */; };
 		80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C272971064D0099AAA9 /* AppDelegate.swift */; };
 		80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C292971064D0099AAA9 /* SceneDelegate.swift */; };
 		80ED5C2F2971064D0099AAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C2D2971064D0099AAA9 /* Main.storyboard */; };
@@ -65,11 +70,16 @@
 /* Begin PBXFileReference section */
 		80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
 		80037F5D29726B17004B66F6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		80037F5F297274CA004B66F6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		80037F66297275D5004B66F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFeatureInfoModel.swift; sourceTree = "<group>"; };
+		80037F6B29729033004B66F6 /* VehicleSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchService.swift; sourceTree = "<group>"; };
+		80037F6D297290CC004B66F6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		80C168B72971CF61009112CB /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		80C168B92971CF6B009112CB /* UiState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
 		80C168BB2971CF76009112CB /* VehicleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoModel.swift; sourceTree = "<group>"; };
-		80C168BD2971CF91009112CB /* MockApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
-		80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoFetchService.swift; sourceTree = "<group>"; };
+		80C168BD2971CF91009112CB /* VehicleSearchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleSearchApi.swift; sourceTree = "<group>"; };
+		80C168BE2971CF91009112CB /* VehicleInfoFetchServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoFetchServiceImpl.swift; sourceTree = "<group>"; };
 		80ED5C242971064D0099AAA9 /* VehicleSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED5C272971064D0099AAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ED5C292971064D0099AAA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				80C168B72971CF61009112CB /* SearchScreenViewModel.swift */,
-				80C168BB2971CF76009112CB /* VehicleInfoModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -151,7 +160,9 @@
 		80037F5929726A91004B66F6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				80C168BE2971CF91009112CB /* VehicleInfoFetchService.swift */,
+				80C168BE2971CF91009112CB /* VehicleInfoFetchServiceImpl.swift */,
+				80037F6B29729033004B66F6 /* VehicleSearchService.swift */,
+				80037F6D297290CC004B66F6 /* ApiResult.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -159,7 +170,7 @@
 		80037F5A29726A98004B66F6 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				80C168BD2971CF91009112CB /* MockApi.swift */,
+				80C168BD2971CF91009112CB /* VehicleSearchApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -169,8 +180,26 @@
 			children = (
 				80ED5C862971665A0099AAA9 /* UIView.swift */,
 				80037F5D29726B17004B66F6 /* NSObject.swift */,
+				80037F5F297274CA004B66F6 /* String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		80037F61297275B5004B66F6 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				80037F67297275D5004B66F6 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		80037F6829728FAD004B66F6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				80C168BB2971CF76009112CB /* VehicleInfoModel.swift */,
+				80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		80ED5C1B2971064D0099AAA9 = {
@@ -196,10 +225,12 @@
 		80ED5C262971064D0099AAA9 /* VehicleSearch */ = {
 			isa = PBXGroup;
 			children = (
-				80037F5829726A8A004B66F6 /* Data */,
-				80037F5729726A80004B66F6 /* ViewModel */,
 				80ED5C592971095C0099AAA9 /* Fonts */,
+				80037F5829726A8A004B66F6 /* Data */,
+				80037F6829728FAD004B66F6 /* model */,
+				80037F5729726A80004B66F6 /* ViewModel */,
 				80ED5C82297114200099AAA9 /* View */,
+				80037F61297275B5004B66F6 /* Localization */,
 				80ED5C272971064D0099AAA9 /* AppDelegate.swift */,
 				80ED5C292971064D0099AAA9 /* SceneDelegate.swift */,
 				80ED5C2D2971064D0099AAA9 /* Main.storyboard */,
@@ -405,6 +436,7 @@
 				80ED5C6B297109860099AAA9 /* Roboto-BlackItalic.ttf in Resources */,
 				80ED5C7A297109960099AAA9 /* Oswald-Regular.ttf in Resources */,
 				80ED5C68297109860099AAA9 /* Roboto-LightItalic.ttf in Resources */,
+				80037F65297275D5004B66F6 /* Localizable.strings in Resources */,
 				80ED5C2F2971064D0099AAA9 /* Main.storyboard in Resources */,
 				80ED5C70297109860099AAA9 /* Roboto-Medium.ttf in Resources */,
 				80ED5C6C297109860099AAA9 /* Roboto-Light.ttf in Resources */,
@@ -438,17 +470,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */,
+				80037F60297274CA004B66F6 /* String.swift in Sources */,
 				80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */,
+				80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */,
 				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,
 				80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */,
+				80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */,
 				80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */,
 				80C168BA2971CF6B009112CB /* UiState.swift in Sources */,
 				80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */,
-				80C168C02971CF91009112CB /* VehicleInfoFetchService.swift in Sources */,
+				80C168C02971CF91009112CB /* VehicleInfoFetchServiceImpl.swift in Sources */,
 				80ED5C872971665A0099AAA9 /* UIView.swift in Sources */,
 				80037F5E29726B17004B66F6 /* NSObject.swift in Sources */,
 				80ED5C8129710FE70099AAA9 /* VehicleSearchScreen.swift in Sources */,
-				80C168BF2971CF91009112CB /* MockApi.swift in Sources */,
+				80C168BF2971CF91009112CB /* VehicleSearchApi.swift in Sources */,
+				80037F6A29728FCC004B66F6 /* VehicleFeatureInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +521,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		80037F67297275D5004B66F6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80037F66297275D5004B66F6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		80ED5C2D2971064D0099AAA9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
