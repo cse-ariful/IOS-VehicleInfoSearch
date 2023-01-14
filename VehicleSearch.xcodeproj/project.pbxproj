@@ -14,6 +14,7 @@
 		80037F6A29728FCC004B66F6 /* VehicleFeatureInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */; };
 		80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6B29729033004B66F6 /* VehicleSearchService.swift */; };
 		80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6D297290CC004B66F6 /* ApiResult.swift */; };
+		80037F762972C76C004B66F6 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F752972C76C004B66F6 /* Binder.swift */; };
 		80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B72971CF61009112CB /* SearchScreenViewModel.swift */; };
 		80C168BA2971CF6B009112CB /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B92971CF6B009112CB /* UiState.swift */; };
 		80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BB2971CF76009112CB /* VehicleInfoModel.swift */; };
@@ -46,7 +47,7 @@
 		80ED5C7D297109960099AAA9 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C77297109960099AAA9 /* Oswald-Bold.ttf */; };
 		80ED5C7E297109960099AAA9 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C78297109960099AAA9 /* Oswald-ExtraLight.ttf */; };
 		80ED5C7F297109960099AAA9 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C79297109960099AAA9 /* Oswald-Medium.ttf */; };
-		80ED5C8129710FE70099AAA9 /* VehicleSearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */; };
+		80ED5C8129710FE70099AAA9 /* SearchToolScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C8029710FE70099AAA9 /* SearchToolScreen.swift */; };
 		80ED5C872971665A0099AAA9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C862971665A0099AAA9 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFeatureInfoModel.swift; sourceTree = "<group>"; };
 		80037F6B29729033004B66F6 /* VehicleSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchService.swift; sourceTree = "<group>"; };
 		80037F6D297290CC004B66F6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		80037F752972C76C004B66F6 /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		80C168B72971CF61009112CB /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		80C168B92971CF6B009112CB /* UiState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
 		80C168BB2971CF76009112CB /* VehicleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		80ED5C77297109960099AAA9 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		80ED5C78297109960099AAA9 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
 		80ED5C79297109960099AAA9 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
-		80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchScreen.swift; sourceTree = "<group>"; };
+		80ED5C8029710FE70099AAA9 /* SearchToolScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToolScreen.swift; sourceTree = "<group>"; };
 		80ED5C862971665A0099AAA9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				80C168B72971CF61009112CB /* SearchScreenViewModel.swift */,
+				80037F752972C76C004B66F6 /* Binder.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,13 +196,29 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		80037F6829728FAD004B66F6 /* model */ = {
+		80037F6829728FAD004B66F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				80C168BB2971CF76009112CB /* VehicleInfoModel.swift */,
 				80037F6929728FCC004B66F6 /* VehicleFeatureInfoModel.swift */,
 			);
-			path = model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80037F6F2972BC80004B66F6 /* SearchTool */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C8029710FE70099AAA9 /* SearchToolScreen.swift */,
+			);
+			path = SearchTool;
+			sourceTree = "<group>";
+		};
+		80037F702972BCA0004B66F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		80ED5C1B2971064D0099AAA9 = {
@@ -227,7 +246,7 @@
 			children = (
 				80ED5C592971095C0099AAA9 /* Fonts */,
 				80037F5829726A8A004B66F6 /* Data */,
-				80037F6829728FAD004B66F6 /* model */,
+				80037F6829728FAD004B66F6 /* Model */,
 				80037F5729726A80004B66F6 /* ViewModel */,
 				80ED5C82297114200099AAA9 /* View */,
 				80037F61297275B5004B66F6 /* Localization */,
@@ -303,10 +322,10 @@
 		80ED5C82297114200099AAA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				80037F702972BCA0004B66F6 /* Home */,
+				80037F6F2972BC80004B66F6 /* SearchTool */,
 				80037F5C29726AE7004B66F6 /* Extension */,
 				80C168B92971CF6B009112CB /* UiState.swift */,
-				80ED5C8029710FE70099AAA9 /* VehicleSearchScreen.swift */,
-				80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */,
 				80ED5C83297114260099AAA9 /* Component */,
 			);
 			path = View;
@@ -479,10 +498,11 @@
 				80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */,
 				80C168BA2971CF6B009112CB /* UiState.swift in Sources */,
 				80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */,
+				80037F762972C76C004B66F6 /* Binder.swift in Sources */,
 				80C168C02971CF91009112CB /* VehicleInfoFetchServiceImpl.swift in Sources */,
 				80ED5C872971665A0099AAA9 /* UIView.swift in Sources */,
 				80037F5E29726B17004B66F6 /* NSObject.swift in Sources */,
-				80ED5C8129710FE70099AAA9 /* VehicleSearchScreen.swift in Sources */,
+				80ED5C8129710FE70099AAA9 /* SearchToolScreen.swift in Sources */,
 				80C168BF2971CF91009112CB /* VehicleSearchApi.swift in Sources */,
 				80037F6A29728FCC004B66F6 /* VehicleFeatureInfoModel.swift in Sources */,
 			);

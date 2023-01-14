@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class VehicleSearchScreen: UIViewController {
+class SearchToolScreen: UIViewController {
     
     let rootView = UIStackView().apply{v in
         v.backgroundColor =  UIColor(named: "Dark Gray")
@@ -73,6 +73,13 @@ class VehicleSearchScreen: UIViewController {
         btn.backgroundColor = UIColor(named: "Green")
     }
     
+    let resultItemsStack = UIStackView().apply{stack in
+        stack.axis = .vertical
+        stack.spacing = 24
+        stack.layoutMargins = UIEdgeInsets(top: 12, left: 20, bottom: 20, right: 20)
+        stack.isLayoutMarginsRelativeArrangement = true
+    
+    }
     
     let resultView = UIStackView().apply{ stack in
         
@@ -81,9 +88,12 @@ class VehicleSearchScreen: UIViewController {
         stack.axis = .vertical
         
     }
-    
+    let loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large).apply{iv in
+        iv.color = UIColor(named: "Green")
+        iv.startAnimating()
+    }
     let loadingView = UIView().apply{v in
-        v.backgroundColor = .yellow
+//        v.backgroundColor = .yellow
         v.isHidden = true
     }
     
@@ -98,7 +108,6 @@ class VehicleSearchScreen: UIViewController {
     }
     
     let errorView = UIView().apply{v in
-        v.backgroundColor = UIColor(named: "CardBackground")
         v.isHidden = true
     }
     
@@ -113,8 +122,49 @@ class VehicleSearchScreen: UIViewController {
     }
     
     func setUpViewModel(){
+        viewModel.state.bind{[weak self]  state in
+            self?.onUiStateUpdated(state: state)
+        }
         
+    }
+    func onUiStateUpdated(state : UiState<[VehicleFeatureInfoModel]>){
+        print("ui state update \(state)")
+        resultView.isHidden = true
+        errorView.isHidden = true
+        loadingView.isHidden = true
         
+        switch state{
+        case .idle:
+            break
+        case .loading:
+            loadingView.isHidden = false
+            break
+        case .content(let data):
+            resultView.isHidden = false
+             showResult(data: data)
+            break
+        case .error(_):
+            errorView.isHidden = false
+            break
+        }
+    }
+    func showResult(data:[VehicleFeatureInfoModel]){
+        resultItemsStack.subviews.forEach{item in
+            item.removeFromSuperview()
+        }
+       
+        var r:[UIStackView] = []
+        for item in data{
+            let info = getInfoRow(item:item)
+            r.append(info)
+            if r.count == 2 {
+                let rowData = createInformationRow(
+                    leftCell: r.remove(at: 0),
+                    rightCell: r.remove(at: 0)
+                )
+                resultItemsStack.addArrangedSubview(rowData)
+            }
+        }
     }
     
     func setupViews(){
@@ -129,24 +179,24 @@ class VehicleSearchScreen: UIViewController {
     
     func initRootViews() {
         view.addSubview(statusBarBg)
-        statusBarBg.addViewConstarint(
-            start: view.leadingAnchor ,
+        statusBarBg.addViewConstraints(
+            leading: view.leadingAnchor ,
             top: view.topAnchor,
-            end:view.trailingAnchor,
+            trailing:view.trailingAnchor,
             bottom:  view.safeAreaLayoutGuide.topAnchor)
         
         view.addSubview(rootView)
-        rootView.addViewConstarint(
-            start: view.leadingAnchor,
+        rootView.addViewConstraints(
+            leading: view.leadingAnchor,
             top:  view.safeAreaLayoutGuide.topAnchor,
-            end: view.trailingAnchor,
+            trailing: view.trailingAnchor,
             bottom: view.bottomAnchor
         )
         rootView.addSubview(contentView)
-        contentView.addViewConstarint(
-            start: rootView.leadingAnchor,
+        contentView.addViewConstraints(
+            leading: rootView.leadingAnchor,
             top: rootView.topAnchor,
-            end: rootView.trailingAnchor,
+            trailing: rootView.trailingAnchor,
             bottom: rootView.bottomAnchor,
             paddingStart: 20,paddingTop:20,paddingEnd: 20
         )
@@ -160,10 +210,10 @@ class VehicleSearchScreen: UIViewController {
     
     func addHeaderTitle(){
         contentView.addSubview(titleHeader)
-        titleHeader.addViewConstarint(
-            start: contentView.leadingAnchor,
+        titleHeader.addViewConstraints(
+            leading: contentView.leadingAnchor,
             top: contentView.topAnchor,
-            end: contentView.trailingAnchor,
+            trailing: contentView.trailingAnchor,
             paddingTop: 24
         )
     }
@@ -172,10 +222,10 @@ class VehicleSearchScreen: UIViewController {
         contentView.addSubview(searchFieldGroupContainer)
         
         searchFieldGroupContainer
-            .addViewConstarint(
-                start: contentView.leadingAnchor,
+            .addViewConstraints(
+                leading: contentView.leadingAnchor,
                 top: titleHeader.bottomAnchor,
-                end: contentView.trailingAnchor,
+                trailing: contentView.trailingAnchor,
                 paddingTop:32,
                 height: 56
             )
@@ -187,10 +237,10 @@ class VehicleSearchScreen: UIViewController {
         searchFieldContainer.addSubview(searchInputField)
         
         
-        searchInputField.addViewConstarint(
-            start: searchFieldContainer.leadingAnchor,
+        searchInputField.addViewConstraints(
+            leading: searchFieldContainer.leadingAnchor,
             top: searchFieldContainer.topAnchor,
-            end: searchFieldContainer.trailingAnchor,
+            trailing: searchFieldContainer.trailingAnchor,
             bottom: searchFieldContainer.bottomAnchor,
             paddingStart: 12,paddingEnd: 12
         )
@@ -200,12 +250,12 @@ class VehicleSearchScreen: UIViewController {
         
         let spacerView = UIView()
         searchFieldGroupContainer.addArrangedSubview(spacerView)
-        spacerView.addViewConstarint(width: 12)
+        spacerView.addViewConstraints(width: 12)
         
         
         
         searchFieldGroupContainer.addArrangedSubview(searchBtn)
-        searchBtn.addViewConstarint(width:75)
+        searchBtn.addViewConstraints(width:75)
         searchBtn.addTarget(self, action: #selector(onSearchBtnClick),for: .touchUpInside)
         
         
@@ -214,84 +264,67 @@ class VehicleSearchScreen: UIViewController {
     func addErrorView(){
         contentView.addSubview(errorView)
         errorView.addSubview(errorMessageLabel)
-        errorMessageLabel.addViewConstarint(
-            start: errorView.leadingAnchor,
+        errorMessageLabel.addViewConstraints(
+            leading: errorView.leadingAnchor,
             top: errorView.topAnchor,
-            end: errorView.trailingAnchor,
+            trailing: errorView.trailingAnchor,
             bottom: errorView.bottomAnchor,
             paddingStart: 16,
             paddingEnd: 16
         )
-        errorView.addViewConstarint(
-            start: contentView.leadingAnchor,
+        errorView.addViewConstraints(
+            leading: contentView.leadingAnchor,
             top: searchFieldGroupContainer.bottomAnchor,
-            end: contentView.trailingAnchor,
+            trailing: contentView.trailingAnchor,
             paddingTop: 32,
             height: 150
         )
     }
     func addLoadingIndicatorView(){
         contentView.addSubview(loadingView)
-        loadingView.addViewConstarint(
-            start: contentView.leadingAnchor,
+        loadingView.addSubview(loadingIndicator)
+        
+        loadingView.addViewConstraints(
+            leading: contentView.leadingAnchor,
             top: searchFieldGroupContainer.bottomAnchor,
-            end: contentView.trailingAnchor,
+            trailing: contentView.trailingAnchor,
             paddingTop: 42,
             height: 200
         )
+        
+        loadingIndicator.addViewConstraints(
+            leading: loadingView.centerXAnchor,
+            top: loadingView.centerYAnchor,
+            trailing: loadingView.centerXAnchor,
+            bottom: loadingView.centerYAnchor
+        )
+        
     }
     
     func addSearchResultView(){
         
-        
         let greenBar = UIView()
-        greenBar.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        greenBar.addViewConstraints(height: 12)
         greenBar.backgroundColor = UIColor(named: "Green")
         
         resultView.addArrangedSubview(greenBar)
-        
-        
-        let dataList = UIStackView()
-        dataList.axis = .vertical
-        dataList.spacing = 24
-        resultView.addArrangedSubview(dataList)
-        
-        
-        dataList.layoutMargins = UIEdgeInsets(top: 12, left: 20, bottom: 20, right: 20)
-        dataList.isLayoutMarginsRelativeArrangement = true
-        
-        var info:[VehicleFeatureInfoModel] = []
-        info.append(VehicleFeatureInfoModel(feature: "Make", status: "KIA"))
-        info.append(VehicleFeatureInfoModel(feature: "Model", status: "Picanto"))
-        info.append(VehicleFeatureInfoModel(feature: "Details", status:"1.25 GT-line 5dr"))
-        info.append(VehicleFeatureInfoModel(feature: "Body Type", status: "Hatchback"))
-        info.append(VehicleFeatureInfoModel(feature: "Engine", status: "1.25L"))
-        info.append(VehicleFeatureInfoModel(feature: "Year", status: "2017"))
-        info.append(VehicleFeatureInfoModel(feature: "GearBox", status: "Manual"))
-        info.append(VehicleFeatureInfoModel(feature: "MOT", status: "Valid until 18-09-2023",highlighted: true))
-        var r:[UIStackView] = []
-        for item in info{
-            let info = getInfoRow(item:item)
-            r.append(info)
-            if r.count == 2 {
-                dataList.addArrangedSubview(getNewRowStack(col1: r.remove(at: 0), col2: r.remove(at: 0)))
-            }
-        }
+        resultView.addArrangedSubview(resultItemsStack)
+         
         contentView.addSubview(resultView)
-        resultView.addViewConstarint(
-            start: contentView.leadingAnchor,
+        resultView.addViewConstraints(
+            leading: contentView.leadingAnchor,
             top: searchFieldGroupContainer.bottomAnchor,
-            end: contentView.trailingAnchor,
+            trailing: contentView.trailingAnchor,
             paddingTop: 32
         )
         
     }
-    func getNewRowStack(col1:UIView, col2:UIView) -> UIStackView{
+    func createInformationRow(leftCell:UIView, rightCell:UIView) -> UIStackView{
         let rowStack =  UIStackView()
         rowStack.axis = .horizontal
         rowStack.distribution = .fillEqually
-        rowStack.addArrangedSubview(col1)
-        rowStack.addArrangedSubview(col2)
+        rowStack.addArrangedSubview(leftCell)
+        rowStack.addArrangedSubview(rightCell)
         return rowStack
     }
     
@@ -299,9 +332,8 @@ class VehicleSearchScreen: UIViewController {
         
         
         let infoStack = UIStackView()
-        infoStack.axis = .vertical
-        infoStack.distribution = .fillProportionally
-        infoStack.addViewConstarint(height: 65)
+        infoStack.axis = .vertical 
+        infoStack.spacing = 4
         
         
         let title = UILabel()
@@ -312,8 +344,15 @@ class VehicleSearchScreen: UIViewController {
         
         let data = UILabel()
         data.text  = item.status
-        data.textColor = UIColor(named: item.highlighted ? "Green" : "White" )
         data.font = UIFont(name: "Roboto", size: 18)
+        
+        if item.highlighted{
+            data.textColor =  UIColor(named: "Green")?.withAlphaComponent(0.8)
+        }else{
+            data.textColor =  UIColor(named: "White")?.withAlphaComponent(0.8)
+            
+        }
+        
         infoStack.addArrangedSubview(data)
         
         
@@ -335,8 +374,8 @@ class VehicleSearchScreen: UIViewController {
         
         searchFieldGroupContainer.addArrangedSubview(searchLeadingContent)
         
-        searchLeadingContent.addViewConstarint(
-            start: searchFieldGroupContainer.leadingAnchor,
+        searchLeadingContent.addViewConstraints(
+            leading: searchFieldGroupContainer.leadingAnchor,
             top: searchFieldGroupContainer.topAnchor,
             bottom: searchFieldGroupContainer.bottomAnchor,
             width: 42
@@ -381,7 +420,7 @@ class VehicleSearchScreen: UIViewController {
 
 struct MainPreview : PreviewProvider{
     static var previews: some View{
-        UINavigationController(rootViewController: VehicleSearchScreen()).showPreview()
+        UINavigationController(rootViewController: SearchToolScreen()).showPreview()
         
     }
 }

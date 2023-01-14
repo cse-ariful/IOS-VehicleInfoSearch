@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 extension UIView {
-    func addViewConstarint(start: NSLayoutXAxisAnchor?=nil,top: NSLayoutYAxisAnchor?=nil, end: NSLayoutXAxisAnchor?=nil,  bottom: NSLayoutYAxisAnchor?=nil, paddingStart: CGFloat=0, paddingTop: CGFloat=0, paddingEnd: CGFloat=0,  paddingBottom: CGFloat=0,width: CGFloat=0, height: CGFloat=0) {
+    func addViewConstraints(leading: NSLayoutXAxisAnchor?=nil,top: NSLayoutYAxisAnchor?=nil, trailing: NSLayoutXAxisAnchor?=nil,  bottom: NSLayoutYAxisAnchor?=nil, paddingStart: CGFloat=0, paddingTop: CGFloat=0, paddingEnd: CGFloat=0,  paddingBottom: CGFloat=0,width: CGFloat=0, height: CGFloat=0) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -19,7 +19,7 @@ extension UIView {
         }
         
         
-        if let leading = start {
+        if let leading = leading {
             self.leadingAnchor.constraint(equalTo: leading, constant: paddingStart).isActive = true
         }
         
@@ -27,7 +27,7 @@ extension UIView {
             self.bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
         }
         
-        if let trailing = end {
+        if let trailing = trailing {
             self.trailingAnchor.constraint(equalTo: trailing, constant: -paddingEnd).isActive = true
         }
         

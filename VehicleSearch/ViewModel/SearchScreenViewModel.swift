@@ -12,7 +12,7 @@ import Foundation
 
 final class SearchScreenViewModel{
     
-    @Published private(set) var state : UiState<[VehicleFeatureInfoModel]> = UiState.idle
+    private(set) var state :Binder<UiState<[VehicleFeatureInfoModel]>> = Binder(UiState.idle)
     
     //    var state = BehaviorRelay<VehicleInfoModel?>(nil)
     private let apiService = VehicleInfoFetchServiceImpl()
@@ -29,35 +29,58 @@ final class SearchScreenViewModel{
         self.vehicleRegNo = query
     }
     
-    func fetchDetails(regNo:String)async{
-        if case .loading = state{
+    func fetchDetails(regNo:String)async {
+        if case .loading = state.value{
             return
         }
-        state = UiState.loading
+        state.value = UiState.loading
         
-        print("loading started")
         let result = await apiService.queryDetails(regNo: regNo)
-        print("loading finished \(result)")
+       
         DispatchQueue.main.async {
+            
             switch result.self{
-                case .content(let data):
-                    var info:[VehicleFeatureInfoModel] = []
-                    info.append(VehicleFeatureInfoModel(feature: "Make", status: data.make))
-                    info.append(VehicleFeatureInfoModel(feature: "Model", status: data.model))
-                    info.append(VehicleFeatureInfoModel(feature: "Details", status: data.details))
-                    info.append(VehicleFeatureInfoModel(feature: "Body Type", status: data.bodyType))
-                    info.append(VehicleFeatureInfoModel(feature: "Engine", status: data.engine))
-                    info.append(VehicleFeatureInfoModel(feature: "Year", status: data.year))
-                    info.append(VehicleFeatureInfoModel(feature: "GearBox", status: data.gearbox))
-                info.append(VehicleFeatureInfoModel(feature: "MOT", status: data.motExpiry,highlighted : true))
-                    self.state = UiState.content(info)
-                    break
-                case .error(let error):
-                    self.state = UiState.error(error)
-                    break
+                
+            case .content(let data):
+                var info:[VehicleFeatureInfoModel] = []
+                
+                info.append(VehicleFeatureInfoModel(feature: "Make", status: data.make))
+                
+                info.append(VehicleFeatureInfoModel(feature: "Model", status: data.model))
+                
+                info.append(VehicleFeatureInfoModel(feature: "Details", status: data.details))
+                
+                info.append(VehicleFeatureInfoModel(feature: "Body Type", status: data.bodyType))
+               
+                info.append(VehicleFeatureInfoModel(feature: "Engine", status: data.engine))
+                
+                info.append(VehicleFeatureInfoModel(feature: "Year", status: data.year))
+                
+                info.append(VehicleFeatureInfoModel(feature: "GearBox", status: data.gearbox))
+                
+                let date = self.parseDateStr(from: data.motExpiry)
+                info.append(VehicleFeatureInfoModel(feature: "MOT", status: "Valid until \(date)",highlighted : true))
+                
+                self.state.value = UiState.content(info)
+                
+                break
+                
+                
+            case .error(let error):
+                self.state.value = UiState.error(error)
+                break
             }
         }
-        
+    }
+    
+    func parseDateStr(from inputStr:String)->String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        guard let date =  formatter.date(from: inputStr) else{
+            return "--"
+        }
+       formatter.dateFormat = "dd-MM-yyyy"
+       return formatter.string(from: date)
         
     }
     

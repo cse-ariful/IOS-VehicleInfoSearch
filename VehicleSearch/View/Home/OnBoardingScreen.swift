@@ -60,17 +60,17 @@ class OnBoardingScreen: UIViewController {
     }
     func setupViews(){
         view.addSubview(statusBarBg)
-        statusBarBg.addViewConstarint(
-            start: view.leadingAnchor ,
+        statusBarBg.addViewConstraints(
+            leading: view.leadingAnchor ,
             top: view.topAnchor,
-            end: view.trailingAnchor,
+            trailing: view.trailingAnchor,
             bottom: view.safeAreaLayoutGuide.topAnchor
         )
         view.addSubview(mainView)
-        mainView.addViewConstarint(
-            start: view.leadingAnchor,
+        mainView.addViewConstraints(
+            leading: view.leadingAnchor,
             top:  view.safeAreaLayoutGuide.topAnchor,
-            end: view.trailingAnchor,
+            trailing: view.trailingAnchor,
             bottom: view.bottomAnchor
         )
         mainView.addSubview(contentStack)
@@ -79,10 +79,10 @@ class OnBoardingScreen: UIViewController {
         
     }
     func setupContents(){
-        contentStack.addViewConstarint(
-            start: view.leadingAnchor,
+        contentStack.addViewConstraints(
+            leading: view.leadingAnchor,
             top: view.readableContentGuide.topAnchor,
-            end: view.trailingAnchor,
+            trailing: view.trailingAnchor,
             paddingStart: 20,
             paddingTop:32,
             paddingEnd: 20
@@ -102,10 +102,10 @@ class OnBoardingScreen: UIViewController {
     
     func setupNextButton(){
         tryBtn.addTarget(self, action: #selector(gotoSearchScreen), for: .touchUpInside)
-        tryBtn.addViewConstarint(height: 48)
+        tryBtn.addViewConstraints(height: 48)
     }
     @objc func gotoSearchScreen(){
-        let nextScreen = VehicleSearchScreen()
+        let nextScreen = SearchToolScreen()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
