@@ -15,9 +15,10 @@
 "search_tool" = "Search Tool";
 "search_tool_header" = "What's your\nvehicle reg";
 "enter_reg" = "Enter reg";
+"invalid_reg_no" = "Uh-oh! We couldn't find a vehicle with that registration.\n\nTry searching 'XXYYZZZ'...";
 "go" =  "GO";
 
 //other
-"empty_reg_no_msg"  = "Pleas enter reg no";
+"empty_reg_no_msg"  = "Please enter reg no";
 
 

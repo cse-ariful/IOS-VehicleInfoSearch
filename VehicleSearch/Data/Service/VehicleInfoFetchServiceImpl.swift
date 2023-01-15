@@ -9,28 +9,31 @@ import Foundation
 
 
 class VehicleInfoFetchServiceImpl : VehicleSearchService {
-    func queryDetails(regNo: String) async -> ApiResult<VehicleInfoModel> {
-        do{
-            guard let request = VehicleSearchApi.queryVehicleDetails(regNo: regNo)
-                .request else {
-                return ApiResult.error("Error creating url")
-            }
-            
-            let (data,response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                return ApiResult.error("Invalid Reg No")
-            }
-             
-            let decoder = JSONDecoder()
-            let decodedData  = try decoder.decode(VehicleInfoModel.self, from: data)
-           
-            return ApiResult.content(decodedData)
-            
-        }catch{
-            return ApiResult.error("Something went wrong")
+       
+    
+    func queryDetails(regNo: String, completion: @escaping  (ApiResult<VehicleInfoModel>) -> ()) {
+        
+        guard let request = VehicleSearchApi.queryVehicleDetails(regNo: regNo).request else {
+            completion( ApiResult.error("Error creating url"))
+            return
         }
+        
+        URLSession.shared.dataTask(with: request, completionHandler:{ data, response, error in
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion(ApiResult.error("Invalid Reg No"))
+                return
+            }
+            
+            do{
+                let decoder = JSONDecoder()
+                let decodedData  = try decoder.decode(VehicleInfoModel.self, from: data!)
+                completion(ApiResult.content(decodedData))
+            }catch{
+                completion(ApiResult.error("Something went wrong"))
+            }
+            
+            
+        }).resume()
     }
-    
-    
-    
 }

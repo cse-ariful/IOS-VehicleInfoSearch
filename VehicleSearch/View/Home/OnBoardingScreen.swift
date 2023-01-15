@@ -73,7 +73,7 @@ class OnBoardingScreen: UIViewController {
             trailing: view.trailingAnchor,
             bottom: view.bottomAnchor
         )
-        mainView.addSubview(contentStack)
+        mainView.addSubview(contentStack) 
         setupToolbar()
         setupContents()
         

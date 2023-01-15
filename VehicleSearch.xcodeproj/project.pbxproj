@@ -16,6 +16,9 @@
 		80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6D297290CC004B66F6 /* ApiResult.swift */; };
 		80037F762972C76C004B66F6 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F752972C76C004B66F6 /* Binder.swift */; };
 		80037F782972D98E004B66F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F772972D98E004B66F6 /* UIViewController.swift */; };
+		80A53DB92973ABE8008D321A /* VehicleInfoGridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */; };
+		80A53DBB2973CB7F008D321A /* CustomVehicleInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */; };
+		80A53DBD2973FC81008D321A /* VehicleSearchApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */; };
 		80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B72971CF61009112CB /* SearchScreenViewModel.swift */; };
 		80C168BA2971CF6B009112CB /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168B92971CF6B009112CB /* UiState.swift */; };
 		80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C168BB2971CF76009112CB /* VehicleInfoModel.swift */; };
@@ -79,6 +82,9 @@
 		80037F6D297290CC004B66F6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		80037F752972C76C004B66F6 /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		80037F772972D98E004B66F6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoGridCollectionView.swift; sourceTree = "<group>"; };
+		80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVehicleInfoCellView.swift; sourceTree = "<group>"; };
+		80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchApiTest.swift; sourceTree = "<group>"; };
 		80C168B72971CF61009112CB /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		80C168B92971CF6B009112CB /* UiState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
 		80C168BB2971CF76009112CB /* VehicleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 		80037F6F2972BC80004B66F6 /* SearchTool */ = {
 			isa = PBXGroup;
 			children = (
+				80ED5C83297114260099AAA9 /* Component */,
 				80ED5C8029710FE70099AAA9 /* SearchToolScreen.swift */,
 			);
 			path = SearchTool;
@@ -268,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				80ED5C3E2971064F0099AAA9 /* VehicleSearchTests.swift */,
+				80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */,
 			);
 			path = VehicleSearchTests;
 			sourceTree = "<group>";
@@ -329,7 +337,6 @@
 				80037F6F2972BC80004B66F6 /* SearchTool */,
 				80037F5C29726AE7004B66F6 /* Extension */,
 				80C168B92971CF6B009112CB /* UiState.swift */,
-				80ED5C83297114260099AAA9 /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +344,8 @@
 		80ED5C83297114260099AAA9 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */,
+				80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -491,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A53DBB2973CB7F008D321A /* CustomVehicleInfoCellView.swift in Sources */,
 				80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */,
 				80037F60297274CA004B66F6 /* String.swift in Sources */,
 				80037F782972D98E004B66F6 /* UIViewController.swift in Sources */,
@@ -499,6 +509,7 @@
 				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,
 				80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */,
 				80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */,
+				80A53DB92973ABE8008D321A /* VehicleInfoGridCollectionView.swift in Sources */,
 				80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */,
 				80C168BA2971CF6B009112CB /* UiState.swift in Sources */,
 				80C168BC2971CF76009112CB /* VehicleInfoModel.swift in Sources */,
@@ -516,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A53DBD2973FC81008D321A /* VehicleSearchApiTest.swift in Sources */,
 				80ED5C3F2971064F0099AAA9 /* VehicleSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -676,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

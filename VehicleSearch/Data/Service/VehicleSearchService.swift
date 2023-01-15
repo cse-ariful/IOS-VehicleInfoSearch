@@ -7,5 +7,5 @@
 
 import Foundation
 protocol VehicleSearchService {
-    func queryDetails(regNo:String)async -> ApiResult<VehicleInfoModel>
+    func queryDetails(regNo:String,completion:@escaping  (ApiResult<VehicleInfoModel>)->()) 
 }

@@ -73,33 +73,29 @@ class SearchToolScreen: UIViewController {
         btn.backgroundColor = UIColor(named: "Green")
     }
     
-    let resultItemsStack = UIStackView().apply{stack in
-        stack.axis = .vertical
-        stack.spacing = 24
-        stack.layoutMargins = UIEdgeInsets(top: 12, left: 20, bottom: 20, right: 20)
-        stack.isLayoutMarginsRelativeArrangement = true
-    
-    }
+    let resultGridView = VehicleInfoGridCollectionView()
     
     let resultView = UIStackView().apply{ stack in
-        
+        stack.accessibilityIdentifier = "result_view" 
         stack.backgroundColor = UIColor(named: "CardBackground")
         stack.spacing = 8
         stack.axis = .vertical
         
     }
-    let loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large).apply{iv in
+    let loadingIndicator = UIActivityIndicatorView().apply{iv in
         iv.color = UIColor(named: "Green")
+        iv.tag =  12
         iv.startAnimating()
+        
     }
     let loadingView = UIView().apply{v in
-//        v.backgroundColor = .yellow
+        v.accessibilityIdentifier = "loading_view"
         v.isHidden = true
     }
     
     let errorMessageLabel = UILabel().apply{ lbl in
-        
-        lbl.text = "Uh-oh! We couldn't find a vehicle with that registration.\n\n\nTry searching 'XXYYZZZ'..."
+        lbl.accessibilityIdentifier = "error_view"
+        lbl.text = "invalid_reg_no".localized()
         lbl.textColor = UIColor(named: "White")
         lbl.numberOfLines  = 0
         lbl.textAlignment = .center
@@ -128,7 +124,7 @@ class SearchToolScreen: UIViewController {
         
     }
     func onUiStateUpdated(state : UiState<[VehicleFeatureInfoModel]>){
-        print("ui state update \(state)")
+        
         resultView.isHidden = true
         errorView.isHidden = true
         loadingView.isHidden = true
@@ -141,32 +137,14 @@ class SearchToolScreen: UIViewController {
             break
         case .content(let data):
             resultView.isHidden = false
-             showResult(data: data)
+            resultGridView.setItem(items: data)
             break
         case .error(_):
             errorView.isHidden = false
             break
         }
     }
-    func showResult(data:[VehicleFeatureInfoModel]){
-        resultItemsStack.subviews.forEach{item in
-            item.removeFromSuperview()
-        }
-       
-        var r:[UIStackView] = []
-        for item in data{
-            let info = getInfoRow(item:item)
-            r.append(info)
-            if r.count == 2 {
-                let rowData = createInformationRow(
-                    leftCell: r.remove(at: 0),
-                    rightCell: r.remove(at: 0)
-                )
-                resultItemsStack.addArrangedSubview(rowData)
-            }
-        }
-    }
-    
+ 
     func setupViews(){
         initRootViews()
         setupToolbar()
@@ -307,8 +285,8 @@ class SearchToolScreen: UIViewController {
         greenBar.addViewConstraints(height: 12)
         greenBar.backgroundColor = UIColor(named: "Green")
         
-        resultView.addArrangedSubview(greenBar)
-        resultView.addArrangedSubview(resultItemsStack)
+        resultView.addArrangedSubview(greenBar) 
+        resultView.addArrangedSubview(resultGridView) 
          
         contentView.addSubview(resultView)
         resultView.addViewConstraints(
@@ -318,14 +296,6 @@ class SearchToolScreen: UIViewController {
             paddingTop: 32
         )
         
-    }
-    func createInformationRow(leftCell:UIView, rightCell:UIView) -> UIStackView{
-        let rowStack =  UIStackView()
-        rowStack.axis = .horizontal
-        rowStack.distribution = .fillEqually
-        rowStack.addArrangedSubview(leftCell)
-        rowStack.addArrangedSubview(rightCell)
-        return rowStack
     }
     
     func getInfoRow(item:VehicleFeatureInfoModel) -> UIStackView{
@@ -419,6 +389,7 @@ class SearchToolScreen: UIViewController {
 }
 
 struct MainPreview : PreviewProvider{
+    @available(iOS 13.0, *)
     static var previews: some View{
         UINavigationController(rootViewController: SearchToolScreen()).showPreview()
         

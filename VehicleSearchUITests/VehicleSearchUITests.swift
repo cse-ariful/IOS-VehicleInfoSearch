@@ -8,34 +8,101 @@
 import XCTest
 
 final class VehicleSearchUITests: XCTestCase {
-
+    
+    let app = XCUIApplication()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    
+    func testOnBoardingScreen(){
+        
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let title = app.navigationBars["new feature".uppercased()]
+        XCTAssertTrue(title.exists)
+        
+        let nextBtn = app.buttons["try it out".uppercased()]
+        XCTAssertTrue(nextBtn.exists)
+        
+        nextBtn.tap()
+        let searchTitle = app.navigationBars["search tool".uppercased()]
+        
+        XCTAssertTrue(searchTitle.exists)
     }
+    
+    
+    func testInputSearchInput(){
+        
+        app.launch()
+        
+        let title = app.navigationBars["new feature".uppercased()]
+        XCTAssertTrue(title.exists)
+        
+        
+        let nextBtn = app.buttons["try it out".uppercased()]
+        XCTAssertTrue(nextBtn.exists)
+        nextBtn.tap()
+        
+        let searchTitle = app.navigationBars["search tool".uppercased()]
+        XCTAssertTrue(searchTitle.exists)
+        
+        
+        let searchField = app.textFields["Enter Reg".uppercased()]
+        searchField.tap()
+        XCTAssertTrue(searchField.exists)
+        searchField.typeText("xxyyzz")
+        
+        let goBtn = app.buttons["go".uppercased()]
+        XCTAssertTrue(goBtn.exists)
+        goBtn.tap()
+        
+        let progressIndicator = app.otherElements["loading_view"]
+        _ = progressIndicator.waitForExistence(timeout: 1)
+        XCTAssertTrue(progressIndicator.exists)
+        
+        let resultView = app.otherElements["result_view"]
+        _ = resultView.waitForExistence(timeout: 10)
+        
+        let errorView = app.otherElements["error_view"]
+        
+        XCTAssertTrue(resultView.exists || errorView.exists)
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        
     }
+    
+    func testGoTapWithoutSearchInput(){
+        
+        app.launch()
+        
+        let title = app.navigationBars["new feature".uppercased()]
+        XCTAssertTrue(title.exists)
+        
+        
+        let nextBtn = app.buttons["try it out".uppercased()]
+        XCTAssertTrue(nextBtn.exists)
+        nextBtn.tap()
+        
+        let searchTitle = app.navigationBars["search tool".uppercased()]
+        XCTAssertTrue(searchTitle.exists)
+         
+        
+        let goBtn = app.buttons["go".uppercased()]
+        XCTAssertTrue(goBtn.exists)
+        goBtn.tap()
+        
+        let progressIndicator = app.otherElements["loading_view"]
+        _ = progressIndicator.waitForExistence(timeout: 3)
+        XCTAssertFalse(progressIndicator.exists)
+        
+        let resultView = app.otherElements["result_view"]
+        _ = resultView.waitForExistence(timeout: 4)
+        
+        let errorView = app.otherElements["error_view"]
+        
+        XCTAssertFalse(resultView.exists || errorView.exists)
+
+    } 
 }
