@@ -11,11 +11,11 @@ import UIKit
 class CustomVehicleInfoCellView : UICollectionViewCell{
     static let identifier = "CustomCollectionViewCell"
     let title = UILabel().apply{label in
-        label.textColor = UIColor(named: "White")
+        label.textColor = UIColor(named: "White")?.withAlphaComponent(0.9)
         label.font = UIFont(name: "Roboto-Medium", size: 20)
     }
     let subtitle = UILabel().apply{label in
-        label.font = UIFont(name: "Roboto", size: 16)
+        label.font = UIFont(name: "Roboto-Medium", size: 16)
     }
     
     override init(frame: CGRect) {
@@ -29,9 +29,9 @@ class CustomVehicleInfoCellView : UICollectionViewCell{
         title.text  = item.feature.uppercased()
         subtitle.text  = item.status
         if item.highlighted{
-            subtitle.textColor =  UIColor(named: "Green")?.withAlphaComponent(0.8)
+            subtitle.textColor =  UIColor(named: "Green")?.withAlphaComponent(0.7)
         }else{
-            subtitle.textColor =  UIColor(named: "White")?.withAlphaComponent(0.8)
+            subtitle.textColor =  UIColor(named: "White")?.withAlphaComponent(0.7)
             
         }
     }

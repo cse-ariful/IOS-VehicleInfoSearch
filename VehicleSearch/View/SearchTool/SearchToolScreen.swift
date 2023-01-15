@@ -369,15 +369,14 @@ class SearchToolScreen: UIViewController {
     
     
     @objc func onSearchBtnClick(){
-        
+        view.endEditing(true)
         let text : String? = searchInputField.text
         
         if text==nil || text!.isEmpty{
             self.showToast(message: "empty_reg_no_msg".localized())
-            return
         }
         
-        viewModel.queryVehicleInfo(query:text!)
+        viewModel.queryVehicleInfo(query:text ?? "")
          
     }
      

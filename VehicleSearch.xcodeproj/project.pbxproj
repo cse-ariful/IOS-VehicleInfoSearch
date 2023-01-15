@@ -16,6 +16,7 @@
 		80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F6D297290CC004B66F6 /* ApiResult.swift */; };
 		80037F762972C76C004B66F6 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F752972C76C004B66F6 /* Binder.swift */; };
 		80037F782972D98E004B66F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F772972D98E004B66F6 /* UIViewController.swift */; };
+		805CE81629747C87000CC19F /* SearchFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805CE81529747C87000CC19F /* SearchFieldComponent.swift */; };
 		80A53DB92973ABE8008D321A /* VehicleInfoGridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */; };
 		80A53DBB2973CB7F008D321A /* CustomVehicleInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */; };
 		80A53DBD2973FC81008D321A /* VehicleSearchApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */; };
@@ -82,6 +83,7 @@
 		80037F6D297290CC004B66F6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		80037F752972C76C004B66F6 /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		80037F772972D98E004B66F6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		805CE81529747C87000CC19F /* SearchFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldComponent.swift; sourceTree = "<group>"; };
 		80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoGridCollectionView.swift; sourceTree = "<group>"; };
 		80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVehicleInfoCellView.swift; sourceTree = "<group>"; };
 		80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchApiTest.swift; sourceTree = "<group>"; };
@@ -173,7 +175,6 @@
 			children = (
 				80C168BE2971CF91009112CB /* VehicleInfoFetchServiceImpl.swift */,
 				80037F6B29729033004B66F6 /* VehicleSearchService.swift */,
-				80037F6D297290CC004B66F6 /* ApiResult.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -231,6 +232,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		80A53DBE297404FA008D321A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				80037F6D297290CC004B66F6 /* ApiResult.swift */,
+				80C168B92971CF6B009112CB /* UiState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		80ED5C1B2971064D0099AAA9 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +264,7 @@
 		80ED5C262971064D0099AAA9 /* VehicleSearch */ = {
 			isa = PBXGroup;
 			children = (
+				80A53DBE297404FA008D321A /* Enums */,
 				80ED5C592971095C0099AAA9 /* Fonts */,
 				80037F5829726A8A004B66F6 /* Data */,
 				80037F6829728FAD004B66F6 /* Model */,
@@ -336,7 +347,6 @@
 				80037F702972BCA0004B66F6 /* Home */,
 				80037F6F2972BC80004B66F6 /* SearchTool */,
 				80037F5C29726AE7004B66F6 /* Extension */,
-				80C168B92971CF6B009112CB /* UiState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +356,7 @@
 			children = (
 				80A53DB82973ABE8008D321A /* VehicleInfoGridCollectionView.swift */,
 				80A53DBA2973CB7F008D321A /* CustomVehicleInfoCellView.swift */,
+				805CE81529747C87000CC19F /* SearchFieldComponent.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -508,6 +519,7 @@
 				80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */,
 				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,
 				80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */,
+				805CE81629747C87000CC19F /* SearchFieldComponent.swift in Sources */,
 				80037F6C29729033004B66F6 /* VehicleSearchService.swift in Sources */,
 				80A53DB92973ABE8008D321A /* VehicleInfoGridCollectionView.swift in Sources */,
 				80ED5C2A2971064D0099AAA9 /* SceneDelegate.swift in Sources */,

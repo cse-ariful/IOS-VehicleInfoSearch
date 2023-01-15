@@ -27,12 +27,13 @@ class OnBoardingScreen: UIViewController {
         
     }
     let titleMessage = UILabel().apply {label in
+        
         label.text = "onboarding_message".localized()
         label.font = UIFont(name: "Roboto", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor(named: "White")
+        label.textColor = UIColor(named: "White")?.withAlphaComponent(0.8)
         label.translatesAutoresizingMaskIntoConstraints = false
         
     }

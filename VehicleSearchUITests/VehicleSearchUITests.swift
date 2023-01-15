@@ -104,5 +104,5 @@ final class VehicleSearchUITests: XCTestCase {
         
         XCTAssertFalse(resultView.exists || errorView.exists)
 
-    } 
+    }
 }

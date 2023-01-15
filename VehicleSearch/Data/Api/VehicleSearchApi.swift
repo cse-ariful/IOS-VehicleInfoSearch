@@ -47,7 +47,7 @@ extension VehicleSearchApi{
     var request : URLRequest?{
         guard let reqUrl = url  else {return nil}
         var urlReq = URLRequest(url: reqUrl)
-        urlReq.cachePolicy =  .reloadIgnoringLocalAndRemoteCacheData
+        urlReq.cachePolicy = .returnCacheDataElseLoad // .reloadIgnoringLocalAndRemoteCacheData
         urlReq.setValue(apiKey, forHTTPHeaderField: "x-api-key")
         urlReq.httpMethod = "GET"
         return urlReq

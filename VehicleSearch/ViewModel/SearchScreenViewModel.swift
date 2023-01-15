@@ -30,6 +30,10 @@ final class SearchScreenViewModel{
         if case .loading = state.value{
             return
         }
+        if regNo.isEmpty {
+            state.value = UiState.idle
+            return
+        }
         state.value = UiState.loading
         
         apiService.queryDetails(regNo: regNo){result in
