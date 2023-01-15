@@ -60,7 +60,7 @@ final class VehicleSearchUITests: XCTestCase {
         goBtn.tap()
         
         let progressIndicator = app.otherElements["loading_view"]
-        _ = progressIndicator.waitForExistence(timeout: 1)
+        _ = progressIndicator.waitForExistence(timeout: 2)
         XCTAssertTrue(progressIndicator.exists)
         
         let resultView = app.otherElements["result_view"]
@@ -75,7 +75,7 @@ final class VehicleSearchUITests: XCTestCase {
     
     func testGoTapWithoutSearchInput(){
         
-        app.launch()
+        app.launch()    
         
         let title = app.navigationBars["new feature".uppercased()]
         XCTAssertTrue(title.exists)

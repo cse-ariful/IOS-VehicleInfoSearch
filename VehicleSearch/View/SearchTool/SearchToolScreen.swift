@@ -56,12 +56,14 @@ class SearchToolScreen: UIViewController {
         stack.axis = .vertical
         
     }
+    
     let loadingIndicator = UIActivityIndicatorView().apply{iv in
         iv.color = UIColor(named: "Green")
         iv.tag =  12
         iv.startAnimating()
         
     }
+    
     let loadingView = UIView().apply{v in
         v.accessibilityIdentifier = "loading_view"
         v.isHidden = true
