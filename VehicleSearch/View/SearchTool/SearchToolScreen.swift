@@ -20,9 +20,10 @@ class SearchToolScreen: UIViewController {
         v.backgroundColor = UIColor(named: "Green")
     }
     
-    let searchFieldGroupContainer = UIStackView().apply {stack in
+    let searchFieldView = SearchFieldContainerView().apply {stack in
         stack.distribution = .fillProportionally
     }
+    
     let toolbarTitle = UILabel().apply{title in
         
         title.textColor = .white
@@ -45,34 +46,7 @@ class SearchToolScreen: UIViewController {
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
     }
-    
-    let searchInputField =  UITextField().apply{inputField in
-        
-        inputField.isEnabled  = true
-        inputField.isUserInteractionEnabled = true
-        inputField.attributedPlaceholder = NSAttributedString(
-            string: "enter_reg".localized().uppercased(),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
-        )
-        inputField.font = UIFont(name: "Oswald-Regular", size: 24)
-        inputField.borderStyle = UITextField.BorderStyle.none
-        inputField.autocorrectionType = UITextAutocorrectionType.no
-        inputField.autocapitalizationType = .none
-        inputField.keyboardType = UIKeyboardType.default
-        inputField.returnKeyType = UIReturnKeyType.done
-        inputField.clearButtonMode = UITextField.ViewMode.whileEditing
-        inputField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-    }
-    
-    
-    let searchBtn = UIButton().apply{ btn in
-        
-        btn.setTitle("go".localized().uppercased(), for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.titleLabel?.font = UIFont(name: "Oswald-Bold", size: 24)
-        btn.backgroundColor = UIColor(named: "Green")
-    }
-    
+     
     let resultGridView = VehicleInfoGridCollectionView()
     
     let resultView = UIStackView().apply{ stack in
@@ -106,6 +80,7 @@ class SearchToolScreen: UIViewController {
     let errorView = UIView().apply{v in
         v.isHidden = true
     }
+    
     
     let viewModel = SearchScreenViewModel()
     
@@ -145,6 +120,7 @@ class SearchToolScreen: UIViewController {
         }
     }
  
+    
     func setupViews(){
         initRootViews()
         setupToolbar()
@@ -182,7 +158,8 @@ class SearchToolScreen: UIViewController {
     
     func setupToolbar(){
         navigationItem.titleView = toolbarTitle
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(onBackPressed))
+        let backImageIcon =  UIImage(named: "Back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImageIcon, style: .plain, target: self, action: #selector(onBackPressed))
         navigationController?.navigationBar.tintColor =  UIColor(named: "Black")
     }
     
@@ -197,9 +174,9 @@ class SearchToolScreen: UIViewController {
     }
     
     func addSearchContainer(){
-        contentView.addSubview(searchFieldGroupContainer)
+        contentView.addSubview(searchFieldView)
         
-        searchFieldGroupContainer
+        searchFieldView
             .addViewConstraints(
                 leading: contentView.leadingAnchor,
                 top: titleHeader.bottomAnchor,
@@ -208,35 +185,9 @@ class SearchToolScreen: UIViewController {
                 height: 56
             )
         
-        initSearchViewPrefixView()
-        
-        let searchFieldContainer = UIView()
-        searchFieldContainer.backgroundColor = UIColor(named: "White")
-        searchFieldContainer.addSubview(searchInputField)
-        
-        
-        searchInputField.addViewConstraints(
-            leading: searchFieldContainer.leadingAnchor,
-            top: searchFieldContainer.topAnchor,
-            trailing: searchFieldContainer.trailingAnchor,
-            bottom: searchFieldContainer.bottomAnchor,
-            paddingStart: 12,paddingEnd: 12
-        )
-        
-        searchFieldGroupContainer.addArrangedSubview(searchFieldContainer)
-        
-        
-        let spacerView = UIView()
-        searchFieldGroupContainer.addArrangedSubview(spacerView)
-        spacerView.addViewConstraints(width: 12)
-        
-        
-        
-        searchFieldGroupContainer.addArrangedSubview(searchBtn)
-        searchBtn.addViewConstraints(width:75)
-        searchBtn.addTarget(self, action: #selector(onSearchBtnClick),for: .touchUpInside)
-        
-        
+        searchFieldView.setSearchActionHandler{text in
+            self.onSearchBtnClick(text: text)
+        }
     }
     
     func addErrorView(){
@@ -252,19 +203,20 @@ class SearchToolScreen: UIViewController {
         )
         errorView.addViewConstraints(
             leading: contentView.leadingAnchor,
-            top: searchFieldGroupContainer.bottomAnchor,
+            top: searchFieldView.bottomAnchor,
             trailing: contentView.trailingAnchor,
             paddingTop: 32,
             height: 150
         )
     }
+    
     func addLoadingIndicatorView(){
         contentView.addSubview(loadingView)
         loadingView.addSubview(loadingIndicator)
         
         loadingView.addViewConstraints(
             leading: contentView.leadingAnchor,
-            top: searchFieldGroupContainer.bottomAnchor,
+            top: searchFieldView.bottomAnchor,
             trailing: contentView.trailingAnchor,
             paddingTop: 42,
             height: 200
@@ -291,93 +243,19 @@ class SearchToolScreen: UIViewController {
         contentView.addSubview(resultView)
         resultView.addViewConstraints(
             leading: contentView.leadingAnchor,
-            top: searchFieldGroupContainer.bottomAnchor,
+            top: searchFieldView.bottomAnchor,
             trailing: contentView.trailingAnchor,
             paddingTop: 32
         )
         
     }
     
-    func getInfoRow(item:VehicleFeatureInfoModel) -> UIStackView{
-        
-        
-        let infoStack = UIStackView()
-        infoStack.axis = .vertical 
-        infoStack.spacing = 4
-        
-        
-        let title = UILabel()
-        title.text  = item.feature
-        title.textColor = UIColor(named: "White")
-        title.font = UIFont(name: "Roboto", size: 24)
-        infoStack.addArrangedSubview(title)
-        
-        let data = UILabel()
-        data.text  = item.status
-        data.font = UIFont(name: "Roboto", size: 18)
-        
-        if item.highlighted{
-            data.textColor =  UIColor(named: "Green")?.withAlphaComponent(0.8)
-        }else{
-            data.textColor =  UIColor(named: "White")?.withAlphaComponent(0.8)
-            
-        }
-        
-        infoStack.addArrangedSubview(data)
-        
-        
-        return infoStack
-    }
-    
-    
-    
-    let searchLeadingContent = {
-        let v = UIStackView()
-        v.distribution  = .equalSpacing
-        v.alignment = .center
-        v.axis = .vertical
-        v.backgroundColor = UIColor(named: "Blue")
-        return v
-    }()
-    
-    func initSearchViewPrefixView(){
-        
-        searchFieldGroupContainer.addArrangedSubview(searchLeadingContent)
-        
-        searchLeadingContent.addViewConstraints(
-            leading: searchFieldGroupContainer.leadingAnchor,
-            top: searchFieldGroupContainer.topAnchor,
-            bottom: searchFieldGroupContainer.bottomAnchor,
-            width: 42
-        )
-        
-        searchLeadingContent.layoutMargins = UIEdgeInsets(top: 8, left: 0, bottom:8, right: 0)
-        searchLeadingContent.isLayoutMarginsRelativeArrangement = true
-        
-        let image = UIImageView(image: UIImage(named: "Flag")?.withRenderingMode(.alwaysOriginal))
-        
-        searchLeadingContent.addArrangedSubview(image)
-        
-        let label  = UILabel()
-        label.text = "GB"
-        label.font = UIFont(name: "Roboto-Bold", size: 16)
-        label.textAlignment = .center
-        label.textColor = UIColor(named: "Yellow")
-        searchLeadingContent.addArrangedSubview(label)
-    }
-    
-    
-    
-    @objc func onSearchBtnClick(){
-        view.endEditing(true)
-        let text : String? = searchInputField.text
-        
+    func onSearchBtnClick(text:String?){
         if text==nil || text!.isEmpty{
             self.showToast(message: "empty_reg_no_msg".localized())
         }
         
         viewModel.queryVehicleInfo(query:text ?? "")
-         
     }
      
     
@@ -387,10 +265,3 @@ class SearchToolScreen: UIViewController {
     
 }
 
-struct MainPreview : PreviewProvider{
-    @available(iOS 13.0, *)
-    static var previews: some View{
-        UINavigationController(rootViewController: SearchToolScreen()).showPreview()
-        
-    }
-}
