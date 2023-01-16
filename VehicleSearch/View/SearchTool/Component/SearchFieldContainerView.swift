@@ -47,8 +47,8 @@ class SearchFieldContainerView : UIStackView, UITextFieldDelegate{
     let searchBtn = UIButton().apply{ btn in
         
         btn.setTitle("go".localized().uppercased(), for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.titleLabel?.font = UIFont(name: "Oswald-Bold", size: 24)
+        btn.setTitleColor(UIColor(named: "Black")?.withAlphaComponent(0.8), for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Oswald-Medium", size: 22)
         btn.backgroundColor = UIColor(named: "Green")
         
     }
@@ -71,12 +71,14 @@ class SearchFieldContainerView : UIStackView, UITextFieldDelegate{
         addArrangedSubview(searchLeadingContent)
         searchFieldContainer.addSubview(searchInputField)
         addArrangedSubview(searchFieldContainer)
+       
+        let spacerView = UIView()
+        spacerView.addViewConstraints(width: 8)
+        addArrangedSubview(spacerView)
         
         addArrangedSubview(searchBtn)
         
-        let spacerView = UIView()
-        spacerView.addViewConstraints(width: 12)
-        addArrangedSubview(spacerView)
+       
         
         
         

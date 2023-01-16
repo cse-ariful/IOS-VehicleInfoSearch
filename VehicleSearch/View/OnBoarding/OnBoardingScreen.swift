@@ -20,7 +20,7 @@ class OnBoardingScreen: UIViewController {
             .appendWith(color: UIColor(named: "White")!, "onboarding_header".localized().uppercased())
             .appendWith(color: UIColor(named: "Green")!, weight: .bold, ".")
         label.attributedText = str
-        label.font = UIFont(name: "Roboto-Medium", size: 34)
+        label.font = UIFont(name: "Oswald-Regular", size: 34)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -33,14 +33,14 @@ class OnBoardingScreen: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor(named: "White")?.withAlphaComponent(0.8)
+        label.textColor = UIColor(named: "White")?.withAlphaComponent(0.9)
         label.translatesAutoresizingMaskIntoConstraints = false
         
     }
     let tryBtn = UIButton().apply{btn in
         btn.setTitle("try_it_out".localized().uppercased(), for: .normal)
-        btn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        btn.titleLabel?.font =  UIFont(name: "Roboto-Medium", size: 18)
+        btn.setTitleColor(UIColor(named: "Black")?.withAlphaComponent(0.8), for: .normal)
+        btn.titleLabel?.font =   UIFont(name: "Oswald-Medium", size: 22)
         btn.backgroundColor = UIColor(named: "Green")
         btn.translatesAutoresizingMaskIntoConstraints = false
     }

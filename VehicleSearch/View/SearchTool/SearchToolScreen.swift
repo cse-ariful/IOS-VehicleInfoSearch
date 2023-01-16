@@ -182,7 +182,7 @@ class SearchToolScreen: UIViewController {
                 top: titleHeader.bottomAnchor,
                 trailing: contentView.trailingAnchor,
                 paddingTop:32,
-                height: 56
+                height: 50
             )
         
         searchFieldView.setSearchActionHandler{text in
