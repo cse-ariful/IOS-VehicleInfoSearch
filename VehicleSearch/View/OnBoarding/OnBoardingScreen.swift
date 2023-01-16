@@ -59,7 +59,9 @@ class OnBoardingScreen: UIViewController {
         super.viewDidLoad()
         setupViews()
     }
+    
     func setupViews(){
+        
         view.addSubview(statusBarBg)
         statusBarBg.addViewConstraints(
             leading: view.leadingAnchor ,
@@ -67,6 +69,7 @@ class OnBoardingScreen: UIViewController {
             trailing: view.trailingAnchor,
             bottom: view.safeAreaLayoutGuide.topAnchor
         )
+        
         view.addSubview(mainView)
         mainView.addViewConstraints(
             leading: view.leadingAnchor,
@@ -74,11 +77,14 @@ class OnBoardingScreen: UIViewController {
             trailing: view.trailingAnchor,
             bottom: view.bottomAnchor
         )
+        
         mainView.addSubview(contentStack) 
+        
         setupToolbar()
         setupContents()
         
     }
+    
     func setupContents(){
         contentStack.addViewConstraints(
             leading: view.leadingAnchor,
@@ -105,13 +111,11 @@ class OnBoardingScreen: UIViewController {
         tryBtn.addTarget(self, action: #selector(gotoSearchScreen), for: .touchUpInside)
         tryBtn.addViewConstraints(height: 48)
     }
+  
     @objc func gotoSearchScreen(){
         let nextScreen = SearchToolScreen()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
-    
-    @objc func onBackPressed(){
-        
-    }
+  
     
 }

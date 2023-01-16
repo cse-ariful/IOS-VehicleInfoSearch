@@ -1,5 +1,5 @@
 //
-//  VehicleInfoGridView.swift
+//  VehicleInfoGridCollectionView.swift
 //  VehicleSearch
 //
 //  Created by Ariful Jannat Arif on 1/15/23.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class VehicleInfoGridCollectionView : UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource   {
- 
+    
     var data:[VehicleFeatureInfoModel] = []
     
     let collectionViwLayout = UICollectionViewFlowLayout().apply{layutV in
@@ -31,7 +31,7 @@ class VehicleInfoGridCollectionView : UIView, UICollectionViewDelegateFlowLayout
     
     
     func setItem(items:[VehicleFeatureInfoModel]) {
-        print("setItem \(items.count)")
+        
         data = items
         collectionView.reloadData()
         
@@ -50,7 +50,11 @@ class VehicleInfoGridCollectionView : UIView, UICollectionViewDelegateFlowLayout
         self.collectionView.register(CustomVehicleInfoCellView.self, forCellWithReuseIdentifier: CustomVehicleInfoCellView.identifier)
         
         addSubview(collectionView)
-        collectionView.addViewConstraints(leading: leadingAnchor,top: topAnchor,trailing: trailingAnchor,bottom: bottomAnchor)
+        collectionView.addViewConstraints(
+            leading: leadingAnchor,
+            top: topAnchor,
+            trailing: trailingAnchor,
+            bottom: bottomAnchor)
     }
     
     
@@ -62,12 +66,15 @@ class VehicleInfoGridCollectionView : UIView, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
-     
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomVehicleInfoCellView.identifier, for: indexPath) as! CustomVehicleInfoCellView
+        
         cell.setItem(item: data[indexPath.item])
-         return cell
+        
+        return cell
     }
-     
+    
 }

@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol HasApply { }
+protocol HasApply {
+    
+}
 
 extension HasApply {
     func apply(closure:(Self) -> ()) -> Self {
@@ -16,4 +18,4 @@ extension HasApply {
     }
 }
 
-extension NSObject: HasApply { }
+extension NSObject: HasApply {}

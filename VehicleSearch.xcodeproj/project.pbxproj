@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */; };
 		80037F5E29726B17004B66F6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5D29726B17004B66F6 /* NSObject.swift */; };
 		80037F60297274CA004B66F6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80037F5F297274CA004B66F6 /* String.swift */; };
 		80037F65297275D5004B66F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80037F67297275D5004B66F6 /* Localizable.strings */; };
@@ -30,9 +29,7 @@
 		80ED5C2F2971064D0099AAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C2D2971064D0099AAA9 /* Main.storyboard */; };
 		80ED5C312971064F0099AAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C302971064F0099AAA9 /* Assets.xcassets */; };
 		80ED5C342971064F0099AAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C322971064F0099AAA9 /* LaunchScreen.storyboard */; };
-		80ED5C3F2971064F0099AAA9 /* VehicleSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C3E2971064F0099AAA9 /* VehicleSearchTests.swift */; };
 		80ED5C492971064F0099AAA9 /* VehicleSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C482971064F0099AAA9 /* VehicleSearchUITests.swift */; };
-		80ED5C4B2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */; };
 		80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */; };
 		80ED5C68297109860099AAA9 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5C297109850099AAA9 /* Roboto-LightItalic.ttf */; };
 		80ED5C69297109860099AAA9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80ED5C5D297109850099AAA9 /* Roboto-Bold.ttf */; };
@@ -74,7 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
 		80037F5D29726B17004B66F6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		80037F5F297274CA004B66F6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		80037F66297275D5004B66F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -100,10 +96,8 @@
 		80ED5C332971064F0099AAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80ED5C352971064F0099AAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80ED5C3A2971064F0099AAA9 /* VehicleSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		80ED5C3E2971064F0099AAA9 /* VehicleSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchTests.swift; sourceTree = "<group>"; };
 		80ED5C442971064F0099AAA9 /* VehicleSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED5C482971064F0099AAA9 /* VehicleSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchUITests.swift; sourceTree = "<group>"; };
-		80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		80ED5C5C297109850099AAA9 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		80ED5C5D297109850099AAA9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -224,12 +218,12 @@
 			path = SearchTool;
 			sourceTree = "<group>";
 		};
-		80037F702972BCA0004B66F6 /* Home */ = {
+		80037F702972BCA0004B66F6 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
 				80ED5C57297106A90099AAA9 /* OnBoardingScreen.swift */,
 			);
-			path = Home;
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		80A53DBE297404FA008D321A /* Enums */ = {
@@ -264,8 +258,8 @@
 		80ED5C262971064D0099AAA9 /* VehicleSearch */ = {
 			isa = PBXGroup;
 			children = (
-				80A53DBE297404FA008D321A /* Enums */,
 				80ED5C592971095C0099AAA9 /* Fonts */,
+				80A53DBE297404FA008D321A /* Enums */,
 				80037F5829726A8A004B66F6 /* Data */,
 				80037F6829728FAD004B66F6 /* Model */,
 				80037F5729726A80004B66F6 /* ViewModel */,
@@ -277,7 +271,6 @@
 				80ED5C302971064F0099AAA9 /* Assets.xcassets */,
 				80ED5C322971064F0099AAA9 /* LaunchScreen.storyboard */,
 				80ED5C352971064F0099AAA9 /* Info.plist */,
-				80037F5529724E17004B66F6 /* SearchServiceProtocol.swift */,
 			);
 			path = VehicleSearch;
 			sourceTree = "<group>";
@@ -285,7 +278,6 @@
 		80ED5C3D2971064F0099AAA9 /* VehicleSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				80ED5C3E2971064F0099AAA9 /* VehicleSearchTests.swift */,
 				80A53DBC2973FC81008D321A /* VehicleSearchApiTest.swift */,
 			);
 			path = VehicleSearchTests;
@@ -295,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				80ED5C482971064F0099AAA9 /* VehicleSearchUITests.swift */,
-				80ED5C4A2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift */,
 			);
 			path = VehicleSearchUITests;
 			sourceTree = "<group>";
@@ -344,7 +335,7 @@
 		80ED5C82297114200099AAA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80037F702972BCA0004B66F6 /* Home */,
+				80037F702972BCA0004B66F6 /* OnBoarding */,
 				80037F6F2972BC80004B66F6 /* SearchTool */,
 				80037F5C29726AE7004B66F6 /* Extension */,
 			);
@@ -515,7 +506,6 @@
 				80C168B82971CF62009112CB /* SearchScreenViewModel.swift in Sources */,
 				80037F60297274CA004B66F6 /* String.swift in Sources */,
 				80037F782972D98E004B66F6 /* UIViewController.swift in Sources */,
-				80037F5629724E17004B66F6 /* SearchServiceProtocol.swift in Sources */,
 				80037F6E297290CC004B66F6 /* ApiResult.swift in Sources */,
 				80ED5C58297106A90099AAA9 /* OnBoardingScreen.swift in Sources */,
 				80ED5C282971064D0099AAA9 /* AppDelegate.swift in Sources */,
@@ -540,7 +530,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A53DBD2973FC81008D321A /* VehicleSearchApiTest.swift in Sources */,
-				80ED5C3F2971064F0099AAA9 /* VehicleSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +538,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80ED5C492971064F0099AAA9 /* VehicleSearchUITests.swift in Sources */,
-				80ED5C4B2971064F0099AAA9 /* VehicleSearchUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,9 +83,7 @@ class SearchToolScreen: UIViewController {
         v.isHidden = true
     }
     
-    
     let viewModel = SearchScreenViewModel()
-    
     
     
     override func viewDidLoad() {
@@ -100,6 +98,7 @@ class SearchToolScreen: UIViewController {
         }
         
     }
+    
     func onUiStateUpdated(state : UiState<[VehicleFeatureInfoModel]>){
         
         resultView.isHidden = true
@@ -122,7 +121,6 @@ class SearchToolScreen: UIViewController {
         }
     }
  
-    
     func setupViews(){
         initRootViews()
         setupToolbar()
@@ -253,6 +251,8 @@ class SearchToolScreen: UIViewController {
     }
     
     func onSearchBtnClick(text:String?){
+        view.endEditing(true)
+        
         if text==nil || text!.isEmpty{
             self.showToast(message: "empty_reg_no_msg".localized())
         }
@@ -260,7 +260,6 @@ class SearchToolScreen: UIViewController {
         viewModel.queryVehicleInfo(query:text ?? "")
     }
      
-    
     @objc func onBackPressed(){
         navigationController?.popViewController(animated: true)
     }

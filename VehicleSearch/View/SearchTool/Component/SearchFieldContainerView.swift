@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SearchFieldContainerView : UIStackView{
+class SearchFieldContainerView : UIStackView, UITextFieldDelegate{
     
     var onSearchActionHandler: ((String?) -> Void)?
     
@@ -34,16 +34,15 @@ class SearchFieldContainerView : UIStackView{
         inputField.autocorrectionType = UITextAutocorrectionType.no
         inputField.autocapitalizationType = .none
         inputField.keyboardType = UIKeyboardType.default
-        inputField.returnKeyType = UIReturnKeyType.done
+        inputField.returnKeyType = UIReturnKeyType.default
         inputField.clearButtonMode = UITextField.ViewMode.whileEditing
         inputField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
     }
+    
     let searchFieldContainer = UIView().apply{view in
         view.backgroundColor = UIColor(named: "White")
     }
-    
-    
     
     let searchBtn = UIButton().apply{ btn in
         
@@ -68,7 +67,7 @@ class SearchFieldContainerView : UIStackView{
     }
     
     func initialize() {
-        
+        searchInputField.delegate = self
         addArrangedSubview(searchLeadingContent)
         searchFieldContainer.addSubview(searchInputField)
         addArrangedSubview(searchFieldContainer)
@@ -77,7 +76,6 @@ class SearchFieldContainerView : UIStackView{
         
         let spacerView = UIView()
         spacerView.addViewConstraints(width: 12)
-        
         addArrangedSubview(spacerView)
         
         
@@ -119,6 +117,11 @@ class SearchFieldContainerView : UIStackView{
         label.textColor = UIColor(named: "Yellow")
         searchLeadingContent.addArrangedSubview(label)
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        onSearchBtnClick()
+        return true
     }
     
     @objc func onSearchBtnClick(){
